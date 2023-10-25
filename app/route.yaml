@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: application-cpu
+  name: application-cpu
+  namespace: apps-demo
+spec:
+  host: application-cpu.apps.daffy-03vn55qc.cloud.techzone.ibm.com
+  port:
+    targetPort: http
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: application-cpu
+    weight: 100
+  wildcardPolicy: None
