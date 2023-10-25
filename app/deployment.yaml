@@ -24,7 +24,7 @@ spec:
         image: docker.io/ireshmm/app-cpu:test
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources:
           requests:
             memory: "50Mi"
